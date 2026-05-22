@@ -1,4 +1,4 @@
-import { Code2, Globe, Link, Mail, Send } from "lucide-react";
+import { Code2, Globe, Link, Mail } from "lucide-react";
 import { SectionHeading } from "./About";
 import type { PortfolioProfile } from "@/types/portfolio";
 
@@ -50,14 +50,6 @@ export function Contact({ profile }: { profile: PortfolioProfile }) {
               LinkedIn
             </a>
           </div>
-
-          <p className="mt-8 flex items-center gap-2 text-xs text-zinc-600">
-            <Send size={12} />
-            Tip: add your resume PDF to{" "}
-            <code className="rounded bg-white/5 px-1.5 py-0.5 font-mono text-zinc-400">
-              public/resume.pdf
-            </code>
-          </p>
         </div>
       </div>
     </section>
