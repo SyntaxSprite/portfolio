@@ -32,7 +32,9 @@ export const metadata: Metadata = {
     title: `${profile.name} — Portfolio`,
     description: profile.tagline,
     type: "website",
+    url: profile.website,
   },
+  metadataBase: new URL(profile.website),
 };
 
 export default function RootLayout({

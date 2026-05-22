@@ -30,6 +30,7 @@ export type PortfolioProfile = {
   email: string;
   github: string;
   linkedin: string;
+  website: string;
   resumeUrl: string;
   availableForWork: boolean;
   bio: string[];

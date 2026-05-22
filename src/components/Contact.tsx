@@ -1,4 +1,4 @@
-import { Code2, Link, Mail, Send } from "lucide-react";
+import { Code2, Globe, Link, Mail, Send } from "lucide-react";
 import { SectionHeading } from "./About";
 import type { PortfolioProfile } from "@/types/portfolio";
 
@@ -21,6 +21,15 @@ export function Contact({ profile }: { profile: PortfolioProfile }) {
             >
               <Mail size={16} />
               {profile.email}
+            </a>
+            <a
+              href={profile.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm text-white transition hover:bg-white/5"
+            >
+              <Globe size={16} />
+              Portfolio
             </a>
             <a
               href={profile.github}

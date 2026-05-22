@@ -1,4 +1,4 @@
-import { ArrowDown, Code2, Link, Mail, MapPin } from "lucide-react";
+import { ArrowDown, Code2, Globe, Link, Mail, MapPin } from "lucide-react";
 import type { PortfolioProfile } from "@/types/portfolio";
 
 export function Hero({ profile }: { profile: PortfolioProfile }) {
@@ -61,6 +61,15 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
             aria-label="GitHub"
           >
             <Code2 size={20} />
+          </a>
+          <a
+            href={profile.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-500 transition hover:text-white"
+            aria-label="Portfolio"
+          >
+            <Globe size={20} />
           </a>
           <a
             href={profile.linkedin}
