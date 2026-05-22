@@ -105,7 +105,8 @@
       "stack": ["Next.js 15", "Expo 54", "Firebase", "Genkit", "React Native Paper"],
       "type": "mobile",
       "featured": true,
-      "githubRepo": "trackwise-mobile"
+      "githubRepo": "trackwise-mobile",
+      "liveUrl": "https://www.trakwyze.com/"
     },
     {
       "id": "causebloom",
@@ -133,7 +134,8 @@
       "stack": ["Next.js 14", "Genkit", "Neon", "Drizzle", "Auth.js", "Shadcn"],
       "type": "ai",
       "featured": true,
-      "githubRepo": "style-ai"
+      "githubRepo": "style-ai",
+      "liveUrl": "https://style-ai-liard.vercel.app/"
     },
     {
       "id": "bank-local",
@@ -175,7 +177,8 @@
       "stack": ["Django 5", "DRF", "Cloudinary", "PostgreSQL"],
       "type": "web",
       "featured": false,
-      "githubRepo": "Jhavis_couture"
+      "githubRepo": "Jhavis_couture",
+      "liveUrl": "https://jhavis.com/"
     },
     {
       "id": "firestore-migration",
