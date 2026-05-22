@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Developer Portfolio
 
-## Getting Started
+A employment-ready portfolio for **mobile & full-stack** roles. Built from your GitHub projects, deployable free on [Vercel](https://vercel.com), and easy to keep updated.
 
-First, run the development server:
+## Features
+
+- **JSON-driven content** — edit one file to update projects, skills, and bio
+- **GitHub auto-sync** — fetches your latest repos hourly (ISR) when `GITHUB_USERNAME` is set
+- **Featured projects** — CampusConnect Pro, ArtizanSquare, TRW Capital, SwiftSend, TrackWise, CauseBloom, StyleAI, and more
+- **SEO & Open Graph** — ready for recruiters and LinkedIn
+- **On-demand refresh** — `POST /api/revalidate` after you push new repos
+
+## Quick start
 
 ```bash
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customize (5 minutes)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Edit **`src/data/portfolio.json`**:
+   - `name`, `email`, `github`, `linkedin`, `location`
+   - Add/remove projects under `projects`
+   - Toggle `featured: true` for portfolio highlights
 
-## Learn More
+2. Add your resume: copy `resume.pdf` into **`public/resume.pdf`**
 
-To learn more about Next.js, take a look at the following resources:
+3. Copy `.env.example` to `.env.local` and set:
+   ```
+   GITHUB_USERNAME=your-github-username
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel (free)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push this folder to a new GitHub repo (e.g. `yourusername/portfolio`)
+2. Go to [vercel.com/new](https://vercel.com/new) → Import the repo
+3. Add environment variables:
+   - `GITHUB_USERNAME` = your GitHub username
+   - (optional) `GITHUB_TOKEN` = personal access token for higher API limits
+   - (optional) `REVALIDATE_SECRET` = random string for manual cache refresh
+4. Deploy — you get a `*.vercel.app` URL
 
-## Deploy on Vercel
+Every `git push` redeploys automatically. GitHub repos refresh every hour without redeploying.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How updates work
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Method | What happens |
+|--------|----------------|
+| Edit `portfolio.json` + push | Full content update on next deploy |
+| Push code to GitHub repos | "Latest from GitHub" section updates hourly |
+| `POST /api/revalidate` with `Authorization: Bearer <REVALIDATE_SECRET>` | Immediate cache refresh |
+
+## Project structure
+
+```
+src/
+  data/portfolio.json   ← main content (edit this)
+  components/           ← UI sections
+  lib/portfolio.ts      ← data + GitHub merge logic
+  lib/github.ts         ← GitHub API with ISR
+  app/page.tsx          ← single-page portfolio
+```
+
+## Tech stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS 4
+- Lucide icons
+- Vercel hosting + ISR
+
+## Employment tips
+
+- Set `availableForWork: true` when job hunting
+- Keep **3–5 featured** projects with strong highlights (not 20)
+- Add live demo URLs where possible (`liveUrl` in each project)
+- Match job posts: mobile roles → lead with ArtizanSquare + TrackWise; full-stack → CampusConnect + TRW + SwiftSend

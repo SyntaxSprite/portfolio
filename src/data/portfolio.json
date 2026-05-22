@@ -1,0 +1,212 @@
+{
+  "name": "Okeoghene Inikori",
+  "headline": "Full-Stack & Mobile Developer",
+  "tagline": "Building production apps with React, Next.js, Expo, Django, Laravel, and Firebase — from campus systems and marketplaces to fintech, logistics, and AI-powered products.",
+  "location": "Nigeria",
+  "email": "syntaxsprite@gmail.com",
+  "github": "https://github.com/syntaxsprite",
+  "linkedin": "https://linkedin.com/in/yourprofile",
+  "resumeUrl": "/resume.pdf",
+  "availableForWork": true,
+  "bio": [
+    "I ship end-to-end products: Expo mobile apps paired with Next.js APIs and Django/Laravel backends deployed to Firebase, Render, and Vercel.",
+    "My work spans fintech, logistics, campus management, health coaching, artisan marketplaces, and AI-assisted writing — with strong focus on role-based dashboards, real-time data, and polished UX.",
+    "I integrate Genkit/LLM features, Firestore security rules, payment flows, and maps-based experiences across web and mobile."
+  ],
+  "skillCategories": [
+    {
+      "name": "Mobile",
+      "skills": ["React Native", "Expo", "Expo Router", "React Navigation", "EAS Build", "Push Notifications", "Maps & Location"]
+    },
+    {
+      "name": "Frontend",
+      "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite", "Radix UI", "Framer Motion", "React Hook Form"]
+    },
+    {
+      "name": "Backend",
+      "skills": ["Django REST", "Laravel", "Node.js", "REST APIs", "JWT Auth", "Celery", "Prisma", "Drizzle"]
+    },
+    {
+      "name": "Cloud & Data",
+      "skills": ["Firebase", "Firestore", "PostgreSQL", "Neon", "Cloudinary", "Vercel", "Render"]
+    },
+    {
+      "name": "AI & Integrations",
+      "skills": ["Google Genkit", "LLM APIs", "Google Maps", "PayPal", "Nodemailer", "PDF Generation", "2FA"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "campus-connect",
+      "title": "CampusConnect Pro",
+      "description": "Comprehensive campus management platform with admin analytics, student dashboards, enrollments, grades, fees, library, and attendance.",
+      "highlights": [
+        "Role-based Firestore security with admin and student portals",
+        "Genkit-powered AI username suggestions",
+        "Real-time dashboards with TanStack Table and Recharts"
+      ],
+      "stack": ["Next.js 15", "React 19", "TypeScript", "Firebase", "Genkit", "Tailwind"],
+      "type": "fullstack",
+      "featured": true,
+      "githubRepo": "campus-pro-git"
+    },
+    {
+      "id": "artizan-square",
+      "title": "ArtizanSquare",
+      "description": "Three-tier marketplace connecting problem-solvers with clients — React web, Expo mobile, and Django REST API with maps and messaging.",
+      "highlights": [
+        "Cross-platform: Vite SPA + Expo mobile + Django API on Render",
+        "Google/Apple sign-in, artisan discovery, reviews, and proposals",
+        "Celery, Redis, Cloudinary, and JWT refresh flows"
+      ],
+      "stack": ["React Native", "Expo", "Django", "DRF", "React", "Firebase", "Google Maps"],
+      "type": "mobile",
+      "featured": true,
+      "githubRepo": "mobile-app",
+      "liveUrl": "https://artizansquare-main.onrender.com"
+    },
+    {
+      "id": "trw-capital",
+      "title": "TRW Capital Finance",
+      "description": "Investment and fintech platform with crypto deposits, copy trading, referrals, KYC, and admin tooling for portfolio management.",
+      "highlights": [
+        "Crypto deposit workflows with CoinMarketCap integration",
+        "Admin ROI seeding and synthetic transaction generator",
+        "Referral tree and premium dark UI"
+      ],
+      "stack": ["Next.js 15", "TypeScript", "Firebase", "Genkit", "Nodemailer"],
+      "type": "fintech",
+      "featured": true,
+      "githubRepo": "TRW-Capital-Finance"
+    },
+    {
+      "id": "swiftsend",
+      "title": "SwiftSend",
+      "description": "Logistics platform for shipments with live Google Maps tracking, invoices, and separate customer and admin dashboards.",
+      "highlights": [
+        "Public shipment tracking by ID",
+        "Haversine distance calculations and route visualization",
+        "Role-based routing for customers vs admins"
+      ],
+      "stack": ["Next.js 15", "Firebase", "Google Maps", "Genkit", "Recharts"],
+      "type": "fullstack",
+      "featured": true,
+      "githubRepo": "swiftsend"
+    },
+    {
+      "id": "trackwise",
+      "title": "TrackWise (Trakwyze)",
+      "description": "AI health and fitness coaching with workouts, meals, nutrition tracking, and a companion Expo mobile app.",
+      "highlights": [
+        "Mobile app calls Next.js API routes with Firebase auth",
+        "Genkit + Groq for coaching chat and health tips",
+        "Charts, notifications, and secure token storage"
+      ],
+      "stack": ["Next.js 15", "Expo 54", "Firebase", "Genkit", "React Native Paper"],
+      "type": "mobile",
+      "featured": true,
+      "githubRepo": "trackwise-mobile"
+    },
+    {
+      "id": "causebloom",
+      "title": "CauseBloom",
+      "description": "Donation platform for charitable causes with PayPal, admin oversight, and hybrid Firebase + PostgreSQL architecture.",
+      "highlights": [
+        "Donor signup and donation export for admins",
+        "Prisma + Supabase alongside Firestore",
+        "QR codes and email templates"
+      ],
+      "stack": ["Next.js 15", "Firebase", "Prisma", "PayPal", "Genkit"],
+      "type": "fullstack",
+      "featured": true,
+      "githubRepo": "causebloom-donation"
+    },
+    {
+      "id": "style-ai",
+      "title": "StyleAI",
+      "description": "AI writing assistant with tone control, style profiles, and DOCX/PDF import and export.",
+      "highlights": [
+        "Genkit with Google AI and Mistral",
+        "Neon Postgres with Drizzle ORM and Auth.js",
+        "Dashboard analytics for writing sessions"
+      ],
+      "stack": ["Next.js 14", "Genkit", "Neon", "Drizzle", "Auth.js", "Shadcn"],
+      "type": "ai",
+      "featured": true,
+      "githubRepo": "style-ai"
+    },
+    {
+      "id": "bank-local",
+      "title": "Online Banking Platform",
+      "description": "Laravel banking demo with accounts, transfers, 2FA, admin dashboard, and PDF statements.",
+      "highlights": [
+        "Checking, savings, and business accounts with transfer review flow",
+        "Google Authenticator 2FA and DomPDF receipts",
+        "Pest test suite and Breeze auth"
+      ],
+      "stack": ["Laravel 12", "PHP 8.2", "Vite", "PostgreSQL", "DomPDF"],
+      "type": "fintech",
+      "featured": true,
+      "githubRepo": "bank-local"
+    },
+    {
+      "id": "aiden",
+      "title": "Aiden Hospitality SaaS",
+      "description": "Property and booking management SaaS for establishments with rooms, reservations, and customization.",
+      "highlights": [
+        "Multi-establishment dashboard",
+        "Google OAuth and JWT session handling",
+        "Tiered pricing by room limits"
+      ],
+      "stack": ["Next.js 16", "Tailwind 4", "React Hook Form", "Yup"],
+      "type": "fullstack",
+      "featured": false,
+      "githubRepo": "aiden"
+    },
+    {
+      "id": "jhavis-couture",
+      "title": "Jhavis Couture",
+      "description": "Fashion e-commerce with lister portal, order management, and superadmin CMS.",
+      "highlights": [
+        "Lister role for product management",
+        "ZeptoMail order notifications",
+        "i18n with modeltranslation"
+      ],
+      "stack": ["Django 5", "DRF", "Cloudinary", "PostgreSQL"],
+      "type": "web",
+      "featured": false,
+      "githubRepo": "Jhavis_couture"
+    },
+    {
+      "id": "firestore-migration",
+      "title": "Firestore Migration Tool",
+      "description": "Utility to migrate Firestore data and Auth users between Firebase projects with validation.",
+      "highlights": [
+        "Dual-project credential setup",
+        "Batch writes and connection validation",
+        "Firebase Admin SDK"
+      ],
+      "stack": ["Node.js", "Firebase Admin", "Next.js"],
+      "type": "backend",
+      "featured": false,
+      "githubRepo": "firestore-migration"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Independent Full-Stack & Mobile Developer",
+      "period": "2023 — Present",
+      "description": "Designed and shipped 15+ production-oriented apps across fintech, logistics, education, health, and marketplaces using React, Next.js, Expo, Django, and Laravel."
+    },
+    {
+      "title": "Mobile + API Integration",
+      "period": "Ongoing",
+      "description": "Built Expo apps (ArtizanSquare, TrackWise) that authenticate via Firebase and consume Next.js API routes with secure token refresh."
+    },
+    {
+      "title": "Firebase & Cloud Architecture",
+      "period": "Ongoing",
+      "description": "Implemented Firestore security rules, migration tooling, Genkit AI flows, and deployments on Vercel, Render, and Firebase Hosting."
+    }
+  ]
+}
