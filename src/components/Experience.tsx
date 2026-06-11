@@ -16,7 +16,7 @@ export function Experience({ profile }: { profile: PortfolioProfile }) {
               key={item.title}
               className="relative grid gap-4 border-l border-white/10 py-8 pl-8 md:grid-cols-[200px_1fr]"
             >
-              <span className="absolute -left-1.5 top-10 h-3 w-3 rounded-full border-2 border-cyan-500 bg-[#070b14]" />
+              <span className="absolute -left-1.5 top-10 h-3 w-3 rounded-full border-2 border-amber-500 bg-[#070b14]" />
               <p className="font-mono text-sm text-zinc-500">{item.period}</p>
               <div>
                 <h3 className="font-semibold text-white">{item.title}</h3>

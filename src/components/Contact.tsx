@@ -6,7 +6,7 @@ export function Contact({ profile }: { profile: PortfolioProfile }) {
   return (
     <section id="contact" className="scroll-mt-24 px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-indigo-600/5 p-10 md:p-14">
+        <div className="rounded-3xl border border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-rose-600/5 p-10 md:p-14">
           <SectionHeading label="05" title="Let's work together" />
           <p className="mt-4 max-w-lg text-zinc-400">
             I&apos;m open to mobile and full-stack developer roles — remote or
@@ -17,7 +17,7 @@ export function Contact({ profile }: { profile: PortfolioProfile }) {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-[#070b14] transition hover:bg-cyan-400"
+              className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-[#070b14] transition hover:bg-amber-400"
             >
               <Mail size={16} />
               {profile.email}

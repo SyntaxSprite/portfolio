@@ -23,7 +23,7 @@ export function Header({ name }: { name: string }) {
           className="font-mono text-sm font-semibold tracking-tight text-white"
         >
           {name.split(" ")[0]}
-          <span className="text-cyan-400">.</span>dev
+          <span className="text-amber-400">.</span>dev
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -38,7 +38,7 @@ export function Header({ name }: { name: string }) {
           ))}
           <a
             href="#contact"
-            className="rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-400 ring-1 ring-cyan-500/30 transition hover:bg-cyan-500/20"
+            className="rounded-full bg-amber-500/10 px-4 py-2 text-sm font-medium text-amber-400 ring-1 ring-amber-500/30 transition hover:bg-amber-500/20"
           >
             Hire me
           </a>

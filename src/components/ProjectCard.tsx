@@ -4,7 +4,7 @@ import type { Project } from "@/types/portfolio";
 
 const typeColors: Record<Project["type"], string> = {
   mobile: "bg-violet-500/10 text-violet-400 ring-violet-500/20",
-  fullstack: "bg-cyan-500/10 text-cyan-400 ring-cyan-500/20",
+  fullstack: "bg-sky-500/10 text-sky-400 ring-sky-500/20",
   web: "bg-blue-500/10 text-blue-400 ring-blue-500/20",
   backend: "bg-amber-500/10 text-amber-400 ring-amber-500/20",
   ai: "bg-fuchsia-500/10 text-fuchsia-400 ring-fuchsia-500/20",
@@ -23,9 +23,9 @@ export function ProjectCard({
     : githubBase;
 
   return (
-    <article className="group flex flex-col rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition hover:border-cyan-500/20 hover:bg-white/[0.04]">
+    <article className="group flex flex-col rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition hover:border-amber-500/20 hover:bg-white/[0.04]">
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-lg font-semibold text-white group-hover:text-cyan-400 transition">
+        <h3 className="text-lg font-semibold text-white group-hover:text-amber-400 transition">
           {project.title}
         </h3>
         <span
@@ -43,7 +43,7 @@ export function ProjectCard({
         {project.highlights.slice(0, 3).map((h) => (
           <li
             key={h}
-            className="flex gap-2 text-xs text-zinc-500 before:content-['→'] before:text-cyan-600"
+            className="flex gap-2 text-xs text-zinc-500 before:content-['→'] before:text-amber-600"
           >
             {h}
           </li>
@@ -76,7 +76,7 @@ export function ProjectCard({
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-zinc-500 transition hover:text-cyan-400"
+            className="flex items-center gap-1.5 text-xs text-zinc-500 transition hover:text-amber-400"
           >
             <ExternalLink size={14} />
             Live demo
@@ -109,7 +109,7 @@ export function RepoCard({
       <div className="flex items-center justify-between gap-2">
         <h4 className="font-mono text-sm font-medium text-white">{name}</h4>
         {isPinned && (
-          <span className="text-[10px] uppercase tracking-wider text-cyan-500">
+          <span className="text-[10px] uppercase tracking-wider text-amber-500">
             Featured
           </span>
         )}
@@ -140,7 +140,7 @@ export function RepoCard({
             href={homepage}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-zinc-500 hover:text-cyan-400"
+            className="text-xs text-zinc-500 hover:text-amber-400"
           >
             Demo
           </a>

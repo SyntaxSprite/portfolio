@@ -48,7 +48,7 @@ export function SectionHeading({
 }) {
   return (
     <div>
-      <p className="font-mono text-sm text-cyan-400">{label} — {title}</p>
+      <p className="font-mono text-sm text-amber-400">{label} — {title}</p>
       {subtitle && (
         <p className="mt-2 max-w-xl text-zinc-500">{subtitle}</p>
       )}

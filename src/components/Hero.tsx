@@ -5,8 +5,8 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
   return (
     <section className="relative flex min-h-screen flex-col justify-center px-6 pt-24 pb-20">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-indigo-600/10 blur-[100px]" />
+        <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-amber-500/10 blur-[120px]" />
+        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-rose-600/10 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl">
@@ -17,7 +17,7 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
           </div>
         )}
 
-        <p className="mb-4 font-mono text-sm text-cyan-400">
+        <p className="mb-4 font-mono text-sm text-amber-400">
           Hi, I&apos;m {profile.name} —
         </p>
 
@@ -39,7 +39,7 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
         <div className="mt-10 flex flex-wrap gap-4">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-[#070b14] transition hover:bg-cyan-400"
+            className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-[#070b14] transition hover:bg-amber-400"
           >
             View my work
             <ArrowDown size={16} />
