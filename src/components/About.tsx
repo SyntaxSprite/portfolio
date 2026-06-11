@@ -2,55 +2,53 @@ import type { PortfolioProfile } from "@/types/portfolio";
 
 export function About({ profile }: { profile: PortfolioProfile }) {
   return (
-    <section id="about" className="scroll-mt-24 px-6 py-24">
+    <section id="about" className="scroll-mt-24 border-t border-white/[0.06] px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading label="01" title="About" />
-        <div className="mt-10 grid gap-10 lg:grid-cols-2">
-          <div className="space-y-4">
-            {profile.bio.map((paragraph) => (
-              <p
-                key={paragraph.slice(0, 40)}
-                className="text-lg leading-relaxed text-zinc-400"
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <StatCard value="15+" label="Projects built" />
-            <StatCard value="8+" label="Featured products" />
-            <StatCard value="3" label="Mobile apps shipped" />
-            <StatCard value="5+" label="Tech stacks mastered" />
-          </div>
+        <SectionHeading title="About" />
+        <div className="mt-12 max-w-3xl space-y-5">
+          {profile.bio.map((paragraph) => (
+            <p
+              key={paragraph.slice(0, 40)}
+              className="text-base leading-[1.75] text-zinc-400 md:text-[17px]"
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
+        <dl className="mt-14 grid grid-cols-2 gap-8 border-t border-white/[0.06] pt-10 sm:grid-cols-4">
+          {[
+            { value: "15+", label: "Projects" },
+            { value: "8", label: "Shipped products" },
+            { value: "3", label: "Mobile apps" },
+            { value: "5+", label: "Stacks" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <dt className="text-2xl font-medium tracking-tight text-zinc-100 md:text-3xl">
+                {stat.value}
+              </dt>
+              <dd className="mt-1 text-sm text-zinc-500">{stat.label}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
 }
 
-function StatCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-      <p className="text-3xl font-bold text-white">{value}</p>
-      <p className="mt-1 text-sm text-zinc-500">{label}</p>
-    </div>
-  );
-}
-
 export function SectionHeading({
-  label,
   title,
   subtitle,
 }: {
-  label: string;
   title: string;
   subtitle?: string;
 }) {
   return (
     <div>
-      <p className="font-mono text-sm text-amber-400">{label} — {title}</p>
+      <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+        {title}
+      </h2>
       {subtitle && (
-        <p className="mt-2 max-w-xl text-zinc-500">{subtitle}</p>
+        <p className="mt-3 max-w-xl text-base text-zinc-500">{subtitle}</p>
       )}
     </div>
   );

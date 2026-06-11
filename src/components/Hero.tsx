@@ -1,91 +1,66 @@
-import { ArrowDown, Code2, Globe, Link, Mail, MapPin } from "lucide-react";
 import type { PortfolioProfile } from "@/types/portfolio";
 
 export function Hero({ profile }: { profile: PortfolioProfile }) {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center px-6 pt-24 pb-20">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-amber-500/10 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-rose-600/10 blur-[100px]" />
-      </div>
-
-      <div className="relative mx-auto w-full max-w-6xl">
+    <section className="flex min-h-[90vh] flex-col justify-end px-6 pb-16 pt-32 md:pb-24 md:pt-40">
+      <div className="mx-auto w-full max-w-6xl">
         {profile.availableForWork && (
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm text-emerald-400">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-            Open to mobile & full-stack roles
-          </div>
+          <p className="mb-8 text-sm text-zinc-500">
+            Available for mobile & full-stack roles
+          </p>
         )}
 
-        <p className="mb-4 font-mono text-sm text-amber-400">
-          Hi, I&apos;m {profile.name} —
-        </p>
-
-        <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-          {profile.headline}
+        <h1 className="max-w-4xl text-[2.5rem] font-medium leading-[1.08] tracking-tight text-zinc-50 sm:text-5xl md:text-6xl">
+          {profile.name}
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
+        <p className="mt-4 text-xl font-normal text-zinc-400 md:text-2xl">
+          {profile.headline}
+        </p>
+
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-zinc-500 md:text-lg">
           {profile.tagline}
         </p>
 
-        <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-zinc-500">
-          <span className="flex items-center gap-1.5">
-            <MapPin size={14} className="text-zinc-600" />
-            {profile.location}
-          </span>
-        </div>
+        <p className="mt-4 text-sm text-zinc-600">{profile.location}</p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-12 flex flex-wrap items-center gap-6">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-[#070b14] transition hover:bg-amber-400"
+            className="inline-flex h-11 items-center bg-amber-600 px-6 text-sm font-medium text-zinc-950 transition hover:bg-amber-500"
           >
-            View my work
-            <ArrowDown size={16} />
+            View work
           </a>
           <a
             href={profile.resumeUrl}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-medium text-white transition hover:border-white/20 hover:bg-white/5"
+            className="inline-flex h-11 items-center border border-white/10 px-6 text-sm font-medium text-zinc-300 transition hover:border-white/20 hover:text-white"
           >
-            Download resume
+            Resume
           </a>
         </div>
 
-        <div className="mt-10 flex items-center gap-5">
+        <div className="mt-14 flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-500">
           <a
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-500 transition hover:text-white"
-            aria-label="GitHub"
+            className="transition hover:text-zinc-200"
           >
-            <Code2 size={20} />
-          </a>
-          <a
-            href={profile.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-500 transition hover:text-white"
-            aria-label="Portfolio"
-          >
-            <Globe size={20} />
+            GitHub
           </a>
           <a
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-500 transition hover:text-white"
-            aria-label="LinkedIn"
+            className="transition hover:text-zinc-200"
           >
-            <Link size={20} />
+            LinkedIn
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="text-zinc-500 transition hover:text-white"
-            aria-label="Email"
+            className="transition hover:text-zinc-200"
           >
-            <Mail size={20} />
+            Email
           </a>
         </div>
       </div>

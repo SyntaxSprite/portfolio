@@ -3,30 +3,19 @@ import type { PortfolioProfile } from "@/types/portfolio";
 
 export function Skills({ profile }: { profile: PortfolioProfile }) {
   return (
-    <section id="skills" className="scroll-mt-24 px-6 py-24">
+    <section id="skills" className="scroll-mt-24 border-t border-white/[0.06] px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          label="02"
-          title="Skills"
-          subtitle="Technologies I use across mobile, web, backend, and cloud."
-        />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHeading title="Skills" />
+        <div className="mt-12 divide-y divide-white/[0.06] border-y border-white/[0.06]">
           {profile.skillCategories.map((category) => (
             <div
               key={category.name}
-              className="rounded-2xl border border-white/5 bg-white/[0.02] p-6"
+              className="grid gap-4 py-6 sm:grid-cols-[140px_1fr] sm:gap-8 sm:py-7"
             >
-              <h3 className="font-semibold text-white">{category.name}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-400"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h3 className="text-sm font-medium text-zinc-300">{category.name}</h3>
+              <p className="text-sm leading-relaxed text-zinc-500">
+                {category.skills.join(" · ")}
+              </p>
             </div>
           ))}
         </div>

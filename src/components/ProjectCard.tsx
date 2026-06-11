@@ -1,15 +1,6 @@
-import { Code2, ExternalLink, Star } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { projectTypeLabel } from "@/lib/portfolio";
 import type { Project } from "@/types/portfolio";
-
-const typeColors: Record<Project["type"], string> = {
-  mobile: "bg-violet-500/10 text-violet-400 ring-violet-500/20",
-  fullstack: "bg-sky-500/10 text-sky-400 ring-sky-500/20",
-  web: "bg-blue-500/10 text-blue-400 ring-blue-500/20",
-  backend: "bg-amber-500/10 text-amber-400 ring-amber-500/20",
-  ai: "bg-fuchsia-500/10 text-fuchsia-400 ring-fuchsia-500/20",
-  fintech: "bg-emerald-500/10 text-emerald-400 ring-emerald-500/20",
-};
 
 export function ProjectCard({
   project,
@@ -23,66 +14,46 @@ export function ProjectCard({
     : githubBase;
 
   return (
-    <article className="group flex flex-col rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition hover:border-amber-500/20 hover:bg-white/[0.04]">
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="text-lg font-semibold text-white group-hover:text-amber-400 transition">
-          {project.title}
-        </h3>
-        <span
-          className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ${typeColors[project.type]}`}
-        >
-          {projectTypeLabel(project.type)}
-        </span>
+    <article className="group flex flex-col border-t border-white/[0.06] py-8 transition first:border-t-0 md:py-10">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-wider text-zinc-600">
+            {projectTypeLabel(project.type)}
+          </p>
+          <h3 className="mt-1 text-lg font-medium text-zinc-100 md:text-xl">
+            {project.title}
+          </h3>
+        </div>
+        <div className="flex shrink-0 gap-4 text-sm">
+          <a
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-500 transition hover:text-zinc-200"
+          >
+            Source
+          </a>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-zinc-500 transition hover:text-zinc-200"
+            >
+              Live
+              <ExternalLink size={12} />
+            </a>
+          )}
+        </div>
       </div>
 
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">
+      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-500">
         {project.description}
       </p>
 
-      <ul className="mt-4 space-y-1.5">
-        {project.highlights.slice(0, 3).map((h) => (
-          <li
-            key={h}
-            className="flex gap-2 text-xs text-zinc-500 before:content-['→'] before:text-amber-600"
-          >
-            {h}
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-4 flex flex-wrap gap-1.5">
-        {project.stack.map((tech) => (
-          <span
-            key={tech}
-            className="rounded bg-white/5 px-2 py-0.5 font-mono text-[10px] text-zinc-500"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-5 flex items-center gap-4 border-t border-white/5 pt-4">
-        <a
-          href={repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-xs text-zinc-500 transition hover:text-white"
-        >
-          <Code2 size={14} />
-          Code
-        </a>
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-zinc-500 transition hover:text-amber-400"
-          >
-            <ExternalLink size={14} />
-            Live demo
-          </a>
-        )}
-      </div>
+      <p className="mt-4 text-xs text-zinc-600">
+        {project.stack.slice(0, 6).join(" · ")}
+      </p>
     </article>
   );
 }
@@ -93,8 +64,6 @@ export function RepoCard({
   url,
   homepage,
   language,
-  stars,
-  isPinned,
 }: {
   name: string;
   description: string;
@@ -105,46 +74,23 @@ export function RepoCard({
   isPinned: boolean;
 }) {
   return (
-    <article className="flex flex-col rounded-xl border border-white/5 bg-white/[0.02] p-5 transition hover:border-white/10">
-      <div className="flex items-center justify-between gap-2">
-        <h4 className="font-mono text-sm font-medium text-white">{name}</h4>
-        {isPinned && (
-          <span className="text-[10px] uppercase tracking-wider text-amber-500">
-            Featured
-          </span>
-        )}
-      </div>
-      <p className="mt-2 flex-1 text-xs leading-relaxed text-zinc-500 line-clamp-2">
+    <article className="border border-white/[0.06] p-4">
+      <h4 className="text-sm font-medium text-zinc-300">{name}</h4>
+      <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-zinc-600">
         {description}
       </p>
       <div className="mt-4 flex items-center justify-between text-xs text-zinc-600">
         <span>{language ?? "—"}</span>
-        {stars > 0 && (
-          <span className="flex items-center gap-1">
-            <Star size={12} />
-            {stars}
-          </span>
-        )}
-      </div>
-      <div className="mt-3 flex gap-3">
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-zinc-500 hover:text-white"
-        >
-          GitHub
-        </a>
-        {homepage && (
-          <a
-            href={homepage}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-zinc-500 hover:text-amber-400"
-          >
-            Demo
+        <div className="flex gap-3">
+          <a href={url} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400">
+            GitHub
           </a>
-        )}
+          {homepage && (
+            <a href={homepage} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400">
+              Live
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

@@ -3,30 +3,22 @@ import type { PortfolioProfile } from "@/types/portfolio";
 
 export function Experience({ profile }: { profile: PortfolioProfile }) {
   return (
-    <section id="experience" className="scroll-mt-24 px-6 py-24">
+    <section id="experience" className="scroll-mt-24 border-t border-white/[0.06] px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          label="04"
-          title="Experience"
-          subtitle="What I've been building and how it maps to engineering roles."
-        />
-        <div className="mt-10 space-y-0">
-          {profile.experience.map((item, i) => (
+        <SectionHeading title="Experience" />
+        <div className="mt-12 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+          {profile.experience.map((item) => (
             <div
               key={item.title}
-              className="relative grid gap-4 border-l border-white/10 py-8 pl-8 md:grid-cols-[200px_1fr]"
+              className="grid gap-2 py-7 sm:grid-cols-[160px_1fr] sm:gap-12"
             >
-              <span className="absolute -left-1.5 top-10 h-3 w-3 rounded-full border-2 border-amber-500 bg-[#070b14]" />
-              <p className="font-mono text-sm text-zinc-500">{item.period}</p>
+              <p className="text-sm text-zinc-600">{item.period}</p>
               <div>
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                <h3 className="text-base font-medium text-zinc-200">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-500">
                   {item.description}
                 </p>
               </div>
-              {i < profile.experience.length - 1 && (
-                <div className="absolute bottom-0 left-0 h-px w-full bg-white/5 md:hidden" />
-              )}
             </div>
           ))}
         </div>

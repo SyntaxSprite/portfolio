@@ -7,7 +7,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
+  { href: "#projects", label: "Work" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
@@ -16,32 +16,25 @@ export function Header({ name }: { name: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#070b14]/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+    <header className="fixed top-0 z-50 w-full border-b border-white/[0.06] bg-[#09090b]/90 backdrop-blur-md">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Link
           href="#"
-          className="font-mono text-sm font-semibold tracking-tight text-white"
+          className="text-sm font-medium tracking-tight text-zinc-200"
         >
-          {name.split(" ")[0]}
-          <span className="text-amber-400">.</span>dev
+          {name}
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-zinc-400 transition hover:text-white"
+              className="text-sm text-zinc-500 transition hover:text-zinc-200"
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="rounded-full bg-amber-500/10 px-4 py-2 text-sm font-medium text-amber-400 ring-1 ring-amber-500/30 transition hover:bg-amber-500/20"
-          >
-            Hire me
-          </a>
         </nav>
 
         <button
@@ -50,17 +43,17 @@ export function Header({ name }: { name: string }) {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-white/5 bg-[#070b14] px-6 py-4 md:hidden">
+        <nav className="border-t border-white/[0.06] bg-[#09090b] px-6 py-4 md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="block py-2 text-sm text-zinc-400"
+              className="block py-2.5 text-sm text-zinc-400"
               onClick={() => setOpen(false)}
             >
               {link.label}
